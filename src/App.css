@@ -10,21 +10,5 @@
   grid-template-columns: 2fr 10fr;
   /*grid-gap: 10px;*/
 }
-.app__header{
-  grid-area: h;
-  background-color: green;
-}
-.app__header img{
-  width: 100px;
-}
-.app__nav{
-  grid-area:n;
-  background-color: burlywood;
-}
-.app__content{
-grid-area: c;
-  background-color: darkblue;
-}
-.app__content img{
-  width: 100%;
-}
+
+

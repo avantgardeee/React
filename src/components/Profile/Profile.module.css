@@ -1,0 +1,11 @@
+.app__content{
+    grid-area: c;
+    background-color: rebeccapurple;
+}
+.app__content img{
+    background-color: mediumpurple;
+    width: 100%;
+}
+.item{
+    color: greenyellow;
+}

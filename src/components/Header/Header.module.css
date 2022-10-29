@@ -1,0 +1,9 @@
+.app__header{
+    grid-area: h;
+    background-color: green;
+}
+.app__header img{
+    max-width: 50px;
+    max-height: 50px;
+    margin: 5px;
+}

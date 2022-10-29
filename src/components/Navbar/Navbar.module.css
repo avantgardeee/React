@@ -1,0 +1,7 @@
+.app__nav{
+    grid-area:n;
+    background-color: burlywood;
+}
+.item{
+    color: white;
+}
