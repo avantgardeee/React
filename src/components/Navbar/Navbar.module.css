@@ -1,7 +1,16 @@
 .app__nav{
     grid-area:n;
     background-color: burlywood;
+    padding: 20px;
 }
 .item{
+    text-decoration: none;
     color: white;
+}
+.active{
+    color: gold;
+    text-decoration: none;
+}
+NavLink{
+    text-decoration: none;
 }
