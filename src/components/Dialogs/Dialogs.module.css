@@ -9,8 +9,8 @@
 }
 
 .dialog {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 .dialogsItems .active{
     color: gold;
@@ -21,6 +21,7 @@
 }
 
 .message {
+    color: white;
 
 }
 NavLink{
