@@ -1,11 +1,8 @@
 import s from './Myposts.module.css';
 import Post from "./Post/Post";
+import {posts} from "../../../index";
 
 const MyPosts = () => {
-    let posts=[
-        {id:1, message:'Hi, how are you?', LikesCount:15},
-        {id:2, message:"It's my first post",LikesCount:20}
-    ];
 
     let postsElements=posts.map(p=><Post message={p.message} LikesCount={p.LikesCount}/>)
 
