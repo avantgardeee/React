@@ -1,10 +1,9 @@
 import s from './Myposts.module.css';
 import Post from "./Post/Post";
-import {posts} from "../../../index";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-    let postsElements=posts.map(p=><Post message={p.message} LikesCount={p.LikesCount}/>)
+    let postsElements=props.posts.map(p=><Post message={p.message} LikesCount={p.LikesCount}/>)
 
     return <div className={s.postsBlock}>
         <h3>My posts</h3>
