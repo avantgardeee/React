@@ -3,18 +3,23 @@
     grid-template-columns: 2fr 10fr;
 }
 
+.dialogsItems .oneDialogItem{
+    display: flex;
+    margin-bottom: 10px;
+}
 .dialogsItems {
     padding: 10px;
-
 }
 
 .dialog {
     color: white;
     text-decoration: none;
+margin: auto 5px;
 }
 .dialogsItems .active{
     color: gold;
     text-decoration: none;
+    margin: auto 5px;
 }
 .messages {
     padding: 10px;
@@ -22,8 +27,10 @@
 
 .message {
     color: white;
+}
+.dialogsItems .dialogAvatar{
+    width: 50px;
+    border-radius: 50%;
+}
 
-}
-NavLink{
-    text-decoration: none;
-}
+
