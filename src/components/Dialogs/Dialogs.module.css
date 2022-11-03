@@ -27,10 +27,25 @@ margin: auto 5px;
 
 .message {
     color: white;
+    display: flex;
+    margin-bottom: 10px;
+
 }
 .dialogsItems .dialogAvatar{
     width: 50px;
     border-radius: 50%;
 }
+.messages .dialogAvatar{
+    width: 50px;
+    border-radius: 50%;
+}
 
-
+.messageText{
+    margin: auto 5px;
+}
+.left{
+    color: red;
+}
+.right{
+    color: rebeccapurple;
+}
