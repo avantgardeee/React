@@ -9,7 +9,7 @@ let store={
                 {id:1, message:'Hi, how are you?', LikesCount:15},
                 {id:2, message:"It's my first post",LikesCount:20}
             ],
-            newPostText:'it-kamasutra.com'
+            newPostText:''
         },
         dialogsPage:{
             messages:[
@@ -25,7 +25,7 @@ let store={
                 {id:5, name:'Viktor'},
                 {id:6, name:'Valera'}
             ],
-            newMessageText:'it-kamasutra.com'
+            newMessageText:''
         },
         sidebar:{
             navbarFriends:[
