@@ -16,7 +16,6 @@ const App = (props) => {
 
     return (
         <div className={'app__wrapper'}>
-            <BrowserRouter>
             <Header/>
             <Navbar state={props.state.sidebar}/>
             <div className={'app__wrapper_content'}>
@@ -36,7 +35,6 @@ const App = (props) => {
                     <Route path="/friends*" element={<Friends/>}/>
                 </Routes>
             </div>
-            </BrowserRouter>
         </div>
     );
 }
