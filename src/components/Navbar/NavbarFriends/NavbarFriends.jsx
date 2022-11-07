@@ -1,6 +1,4 @@
 import s from './../Navbar.module.css'
-// import DialogItem from "./DialogItem/DialogItem";
-// import Message from "./Message/Message";
 import FriendItem from "./FriendItem/FriendItem";
 const NavbarFriends = (props) => {
 
