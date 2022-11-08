@@ -5,8 +5,9 @@ import React from "react";
 import {addMessageActionCreator, UpdateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-    let dialogsElements=props.dialogs.map(d=><DialogItem name={d.name} id={d.id}/>)
-    let messageElements=props.messages.map(m=> <Message
+    let state = props.dialogsPage;
+    let dialogsElements=state.dialogs.map(d=><DialogItem name={d.name} id={d.id}/>)
+    let messageElements=state.messages.map(m=> <Message
         message={m.message}
     />)
 
@@ -25,7 +26,7 @@ const Dialogs = (props) => {
         </div>
         <div className={s.messages}>
             {messageElements}
-            <div><textarea onChange={onMessageChange} value={props.newMessageText} placeholder={'Enter your message'}></textarea></div>
+            <div><textarea onChange={onMessageChange} value={state.newMessageText} placeholder={'Enter your message'}></textarea></div>
             <div><button onClick={addMessage}>Send</button></div>
         </div>
 

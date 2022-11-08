@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import s from "./components/Profile/Profile.module.css";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -11,20 +11,14 @@ import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
-// debugger
     return (
         <div className={'app__wrapper'}>
             <Header/>
-            <Navbar
-                store={props.store}
-            />
+            <Navbar/>
             <div className={'app__wrapper_content'}>
                 <Routes>
-                    <Route path="/*" element={<Profile
-                        // store={props.store}
-                    />}/>
+                    <Route path="/*" element={<Profile/>}/>
                     <Route path="/dialogs*" element={<DialogsContainer
-                        // store={props.store}
                     />}/>
                     <Route path="/news" element={<News/>}/>
                     <Route path="/music" element={<Music/>}/>
