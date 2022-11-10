@@ -10,7 +10,5 @@ let reducers=combineReducers({
     sidebar:sidebarReducer,
     usersPage:usersReducer
 });
-
 let store=createStore(reducers);
-
 export default store;

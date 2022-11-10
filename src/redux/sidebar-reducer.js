@@ -1,3 +1,4 @@
+
 let initialState={
     navbarFriends:[
         {id:1, name:'Dimych'},

@@ -3,7 +3,6 @@ import Post from "./Post/Post";
 import React from "react";
 
 const MyPosts = (props) => {
-    debugger
     let state = props.profilePage;
     let postsElements=state.posts.map(p=><Post message={p.message} LikesCount={p.LikesCount}/>)
 
