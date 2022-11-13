@@ -10,15 +10,16 @@ import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = (props) => {
     return (
         <div className={'app__wrapper'}>
-            <Header/>
+            <HeaderContainer/>
             <Navbar/>
             <div className={'app__wrapper_content'}>
                 <Routes>
-                    <Route path="/profile*" element={<ProfileContainer />}>
+                    <Route path="/*" element={<ProfileContainer />}>
                         <Route path=":userId" element={<ProfileContainer/>} />
                     </Route>
 

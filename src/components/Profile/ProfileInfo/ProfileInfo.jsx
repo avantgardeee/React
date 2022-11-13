@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
             return <span>ищу работу</span>
         } else return <span>не ищу работу</span>
     }
-debugger
+
     return (
         <div>
             <div>
