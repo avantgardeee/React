@@ -22,12 +22,12 @@ export const usersAPI={
         return instance.get('auth/me')
             .then(response=>response.data)
     },
-    deleteUserUnfollow(userId){
+    unfollow(userId){
         return instance.delete(`follow/${userId}`)
             .then(response=>response.data)
 
     },
-    postUserFollow(userId){
+    follow(userId){
         return instance.post(`follow/${userId}`)
             .then(response=>response.data)
 
