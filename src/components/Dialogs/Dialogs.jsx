@@ -2,8 +2,6 @@ import s from './../Dialogs/Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import React from "react";
-import {addMessageActionCreator, UpdateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
-import {Navigate} from "react-router-dom";
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -18,9 +16,6 @@ const Dialogs = (props) => {
     let onMessageChange=(e)=>{
         let text=e.target.value;
         props.onMessageChange(text);
-    }
-    if(!props.isAuth){
-        return <Navigate to={'/login'}/>
     }
 
     return(
