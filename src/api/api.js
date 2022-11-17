@@ -14,8 +14,8 @@ export const usersAPI={
             .then(response=>response.data)
     },
     getProfileUser(userId){
-        return instance.get(`profile/${userId}`)
-            .then(response=>response.data)
+        console.warn('Obsolete method. Please profileAPI object. ')
+        return profileAPI.getProfileUser(userId)
 
     },
     getMeHeader(){
@@ -32,7 +32,19 @@ export const usersAPI={
             .then(response=>response.data)
 
     }
-
-
+}
+export const profileAPI={
+    getProfileUser(userId){
+        return instance.get(`profile/${userId}`)
+            .then(response=>response.data)
+    },
+    getStatus(userId){
+        return instance.get(`profile/status/`+userId)
+            .then(response=>response.data)
+    },
+    updateStatus(status){
+        return instance.put(`profile/status`,{status})
+            .then(response=>response.data)
+    }
 }
 
