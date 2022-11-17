@@ -1,6 +1,7 @@
 import s from './ProfileInfo.module.css';
 import MyPosts from "../MyPosts/MyPosts";
 import Preloader from "../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus"
 
 const ProfileInfo = (props) => {
     if(!props.profile){
@@ -16,11 +17,13 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div>
-                <img src={'https://olympus.crumina.net/wp-content/uploads/2019/03/blog-img-bottom.png'}/>
+                {/*<img src={'https://olympus.crumina.net/wp-content/uploads/2019/03/blog-img-bottom.png'}/>*/}
             </div>
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
+                <ProfileStatus status={'hello my friends'}/>
             </div>
+
             <div>
                 {props.profile.fullName}
             </div>
