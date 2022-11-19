@@ -47,4 +47,10 @@ export const profileAPI={
             .then(response=>response.data)
     }
 }
+export const loginApi={
+    postLogin(email,password,rememberMe,captcha=true){
+        return instance.post(`auth/login`,{email,password,rememberMe,captcha})
+            .then(response=>response.data)
+    }
+}
 
