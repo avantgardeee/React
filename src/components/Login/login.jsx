@@ -33,14 +33,16 @@ const Login=(props)=>{
     const onSubmit=(formData)=>{
         console.log(formData)
         props.login(formData.email,formData.password,formData.rememberMe)
-
-        if(props.isAuth){
-            return <Navigate to={'/profile'}/>
-        }
+    }
+    if(props.isAuth){
+        return <Navigate to={'/profile'}/>
     }
     return <div>
         <h1>Login</h1>
         <LoginReduxForm onSubmit={onSubmit}/>
     </div>
         }
-export default connect(null,{login})(Login);
+const mapStateToProps=(state)=>({
+    isAuth:state.auth.isAuth
+})
+export default connect(mapStateToProps,{login})(Login);
