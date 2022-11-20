@@ -1,21 +1,22 @@
 import React from "react";
 import {Field, Form, reduxForm} from "redux-form";
 import {postLogin} from "../../redux/auth-reducer";
-
+import {required} from "../../utils/validators/validators";
+import {FormsControl} from "../common/FormsControls/FormsControls";
 
 const LoginForm = (props) => {
     return (<form onSubmit={props.handleSubmit}>
         <div>
-            <Field type={'text'} name={'email'} placeholder={'e-mail'} component={"input"}/>
+            <Field type={'text'} name={'email'} placeholder={'e-mail'} component={FormsControl} validate={[required]} typeField={"input"}/>
         </div>
 
         <div>
             <Field type={'password'} name={'password'} placeholder={'password'}
-                   component={"input"}/>
+                   component={FormsControl} validate={[required]} typeField={"input"}/>
         </div>
 
         <div>
-            <Field type={"checkbox"} name={'rememberMe'} component={"input"}/>remember me
+            <Field type={"checkbox"} name={'rememberMe'} component={FormsControl} typeField={"input"}/>remember me
         </div>
 
         <button type={'submit'}>Log in</button>
