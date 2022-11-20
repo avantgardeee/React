@@ -19,8 +19,8 @@ export const usersAPI={
 
     },
     getMeHeader(){
-        return instance.get('auth/me')
-            .then(response=>response.data)
+        console.warn('Obsolete method. Please profileAPI object. ')
+        return authAPI.getMeHeader()
     },
     unfollow(userId){
         return instance.delete(`follow/${userId}`)
@@ -47,10 +47,20 @@ export const profileAPI={
             .then(response=>response.data)
     }
 }
-export const loginApi={
-    postLogin(email,password,rememberMe,captcha=true){
+export const authAPI={
+    getMeHeader() {
+        return instance.get('auth/me')
+            .then(response => response.data)
+    },
+    Login(email,password,rememberMe=false,captcha=true){
+        debugger
         return instance.post(`auth/login`,{email,password,rememberMe,captcha})
             .then(response=>response.data)
-    }
+    },
+    Logout(){
+        return instance.delete(`auth/login`)
+            .then(response=>response.data)
+    },
+
 }
 

@@ -1,4 +1,4 @@
-import {loginApi, usersAPI} from "../api/api";
+import {authAPI, loginApi, usersAPI} from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 const SET_LOGIN_DATA = 'SET_LOGIN_DATA';
@@ -7,26 +7,23 @@ let initialState = {
     userId: null,
     email: null,
     login:null,
-    isFetching:false,
-    isAuth:false,
-    captcha:true,
-    rememberMe:false,
-    password:''
+    isAuth:false
 };
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_USER_DATA:
+        case SET_USER_DATA:{
             return {
                 ...state,
-                ...action.data,
+                ...action.payload,
                 isAuth: true
             }
+        }
             case SET_LOGIN_DATA:
                 debugger
             return {
                 ...state,
-                ...action.data,
+                ...action.payload,
                 isAuth: true,
 
             }
@@ -35,36 +32,39 @@ const authReducer = (state = initialState, action) => {
     }
 
 }
-export const  setAuthUserData= (userId,email,login) => ({type: SET_USER_DATA, data:{userId,email,login}})
-export const  setLoginData= (userId) => ({type: SET_LOGIN_DATA, data:userId})
-
-export const getMeHeader=()=> {
-    return (dispatch) => {
-        usersAPI.getMeHeader()
+export const  setAuthUserData= (userId,email,login,isAuth) => ({type: SET_USER_DATA, payload:{userId,email,login,isAuth}});
+export const getMeHeader=()=>(dispatch)=>{
+    debugger
+        authAPI.getMeHeader()
             .then(data => {
                     if (data.resultCode === 0) {
                         let {id, login, email} = data.data
-                        dispatch(setAuthUserData(id, email, login))
+                        dispatch(setAuthUserData(id, email, login,true))
                     }
                 }
             )
     }
-}
-export const postLogin=(email,password,rememberMe,captcha)=> {
-
-        loginApi.postLogin(email, password, rememberMe, captcha)
+export const login=(email,password,rememberMe)=>(dispatch)=>{
+    console.log(email,password)
+        authAPI.Login(email, password, rememberMe,true)
             .then(data => {
                     if (data.resultCode === 0) {
-                        console.log(data.data.userId)
-                        let {userId} = data.data
                         debugger
-                        return (dispatch) => {
-                            dispatch(setLoginData(data.data.userId))
+                       dispatch(getMeHeader())
                         }
                     }
-                }
             )
-    }
+        }
+
+        export const logout=()=>(dispatch)=>{
+        authAPI.Logout()
+            .then(data => {
+                    if (data.resultCode === 0) {
+                       dispatch(setAuthUserData(null,null,null,false))
+                        }
+                    }
+            )
+        }
 
 
 
