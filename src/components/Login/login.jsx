@@ -1,29 +1,21 @@
 import React from "react";
 import {Field, Form, reduxForm} from "redux-form";
 import {required} from "../../utils/validators/validators";
-import {FormsControl} from "../common/FormsControls/FormsControls";
+import {createField, FormsControl} from "../common/FormsControls/FormsControls";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Navigate} from "react-router-dom";
 import style from "./../common/FormsControls/FormsControls.module.css"
 
 
-const LoginForm = (props) => {
-    return (<form onSubmit={props.handleSubmit}>
-        <div>
-            <Field type={'text'} name={'email'} placeholder={'e-mail'} component={FormsControl} validate={[required]} typeField={"input"}/>
-        </div>
+const LoginForm = ({handleSubmit,error}) => {
+    return (<form onSubmit={handleSubmit}>
+            {createField('e-mail','email',[required],FormsControl)}
+            {createField('password','password',[required],FormsControl,{type:'password'})}
+            {createField(null,'rememberMe',[],FormsControl,{type:'checkbox'},'remember me')}
 
-        <div>
-            <Field type={'password'} name={'password'} placeholder={'password'}
-                   component={FormsControl} validate={[required]} typeField={"input"}/>
-        </div>
-
-        <div>
-            <Field type={"checkbox"} name={'rememberMe'} component={FormsControl} typeField={"input"}/>remember me
-        </div>
-        {props.error && <div className={style.formSummaryError}>
-            {props.error}
+        {error && <div className={style.formSummaryError}>
+            {error}
         </div>}
 
         <button type={'submit'}>Log in</button>

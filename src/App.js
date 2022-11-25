@@ -1,7 +1,5 @@
 import './App.css';
-import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import s from "./components/Profile/Profile.module.css";
 import {Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -14,7 +12,6 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/login";
 import {Component} from "react";
 import {connect} from "react-redux";
-import {getMeHeader, logout} from "./redux/auth-reducer";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 
