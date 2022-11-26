@@ -1,41 +1,32 @@
 import s from './ProfileInfo.module.css';
-import MyPosts from "../MyPosts/MyPosts";
 import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus"
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = (props) => {
-    if(!props.profile){
+const ProfileInfo = ({profile, status, updateStatus}) => {
+    if (!profile) {
         return <Preloader/>
     }
-
-    let job=()=> {
-        if (props.profile.lookingForAJob == true) {
-            return <span>ищу работу</span>
-        } else return <span>не ищу работу</span>
-    }
-
     return (
         <div>
             <div>
                 {/*<img src={'https://olympus.crumina.net/wp-content/uploads/2019/03/blog-img-bottom.png'}/>*/}
             </div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <img src={profile.photos.large}/>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
 
             <div>
-                {props.profile.fullName}
+                {profile.fullName}
             </div>
             <div>
-                {props.profile.aboutMe}
+                {profile.aboutMe}
             </div>
             <div>
-                {job()}
+                {profile.lookingForAJob === true? <span>ищу работу</span> : <span>не ищу работу</span>}
             </div>
             <div>
-                {props.profile.lookingForAJobDescription}
+                {profile.lookingForAJobDescription}
             </div>
 
         </div>
