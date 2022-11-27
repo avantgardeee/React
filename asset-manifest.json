@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/avantgarde.github.io/static/css/main.9d781b8a.css",
+    "main.js": "/avantgarde.github.io/static/js/main.b9b357b7.js",
+    "static/css/672.6d422ec1.chunk.css": "/avantgarde.github.io/static/css/672.6d422ec1.chunk.css",
+    "static/js/672.ec452436.chunk.js": "/avantgarde.github.io/static/js/672.ec452436.chunk.js",
+    "static/css/640.9245cabc.chunk.css": "/avantgarde.github.io/static/css/640.9245cabc.chunk.css",
+    "static/js/640.ccc1f105.chunk.js": "/avantgarde.github.io/static/js/640.ccc1f105.chunk.js",
+    "static/js/787.9c4083a9.chunk.js": "/avantgarde.github.io/static/js/787.9c4083a9.chunk.js",
+    "index.html": "/avantgarde.github.io/index.html",
+    "static/media/preloader.svg": "/avantgarde.github.io/static/media/preloader.03e55fb47098b1db3c4be7b22c76b0ee.svg",
+    "main.9d781b8a.css.map": "/avantgarde.github.io/static/css/main.9d781b8a.css.map",
+    "main.b9b357b7.js.map": "/avantgarde.github.io/static/js/main.b9b357b7.js.map",
+    "672.6d422ec1.chunk.css.map": "/avantgarde.github.io/static/css/672.6d422ec1.chunk.css.map",
+    "672.ec452436.chunk.js.map": "/avantgarde.github.io/static/js/672.ec452436.chunk.js.map",
+    "640.9245cabc.chunk.css.map": "/avantgarde.github.io/static/css/640.9245cabc.chunk.css.map",
+    "640.ccc1f105.chunk.js.map": "/avantgarde.github.io/static/js/640.ccc1f105.chunk.js.map",
+    "787.9c4083a9.chunk.js.map": "/avantgarde.github.io/static/js/787.9c4083a9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d781b8a.css",
+    "static/js/main.b9b357b7.js"
+  ]
+}
