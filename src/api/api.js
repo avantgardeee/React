@@ -48,6 +48,9 @@ export const profileAPI={
             headers:{
                 'Content-Type': 'form/multipart'
             }} );
+    },
+    saveProfile(profile){
+        return instance.put(`profile`,profile);
     }
 }
 export const authAPI={

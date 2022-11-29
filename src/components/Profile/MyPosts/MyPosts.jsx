@@ -6,9 +6,8 @@ import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import { FormsControl} from "../../common/FormsControls/FormsControls";
 
 const MyPosts = React.memo(props => {
-    console.log('myposts')
-    let state = props.posts;
-    let postsElements=state.map(p=><Post message={p.message} LikesCount={p.LikesCount}/>)
+    // let state = props.posts;
+    let postsElements=[...props.posts].map(p=><Post key={p.id} message={p.message} LikesCount={p.LikesCount}/>)
 
     let onAddPost=(values)=>{
         props.addPost(values.newPostText);
