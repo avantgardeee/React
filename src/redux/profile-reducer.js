@@ -6,7 +6,6 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
 const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
-const PROFILE_DATA_UPDATE_STATUS_SUCCESS = 'PROFILE_DATA_UPDATE_STATUS_SUCCESS';
 
 
 let initialState = {
@@ -16,7 +15,6 @@ let initialState = {
     ],
     profile: null,
     status: '',
-    profileDataUpdateStatus:false,
 };
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -55,12 +53,6 @@ const profileReducer = (state = initialState, action) => {
                 profile: {...state.profile, photos: action.photos}
             };
         }
-        case PROFILE_DATA_UPDATE_STATUS_SUCCESS: {
-            return {
-                ...state,
-                profileDataUpdateStatus:true
-            };
-        }
         default:
             return state;
     }
@@ -71,7 +63,6 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
-const profileDataUpdateStatus=()=>({type: PROFILE_DATA_UPDATE_STATUS_SUCCESS})
 
 export const getProfileUser = (userId) => async (dispatch) => {
     let response = await usersAPI.getProfileUser(userId);
@@ -98,13 +89,14 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     let response = await profileAPI.saveProfile(profile);
     if (response.data.resultCode === 0) {
         dispatch(getProfileUser(userId));
-        dispatch(profileDataUpdateStatus());
     } else {
         debugger
         const arrayStrings = response.data.messages[0].slice(30,-1).toLowerCase();
-        const error = {contacts:{arrayStrings}};
-        error['contacts'][arrayStrings] =response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
+        const error = {contacts:{}};
+        if(arrayStrings) error['contacts'][arrayStrings] =response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
         dispatch(stopSubmit('edit-profile', error));
+        return Promise.reject(response.data.messages[0]);
+
     }
 }
 

@@ -5,10 +5,9 @@ import userPhoto from "../../../assets/images/images.png";
 import {useState} from "react";
 import ProfileDataForm from "./ProfileDataForm";
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto,saveProfile,profileDataUpdateStatus}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto,saveProfile}) => {
 
     let [editMode,setEditMode]=useState(false);
-    // let [status,setStatus]=useState(props.status);
 
     if (!profile) {
         return <Preloader/>
@@ -23,9 +22,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto,saveProf
     const onSubmit=(formData)=> {
         saveProfile(formData).then(
             ()=> {
-                if (profileDataUpdateStatus === true) {
                     setEditMode(false)
-                }
             }
     )
     }
