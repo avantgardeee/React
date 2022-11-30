@@ -64,7 +64,7 @@ let mapStateToProps=(state)=>({
         status:state.profilePage.status,
         authorizedUserId:state.auth.userId,
         isAuth:state.auth.isAuth,
-        profileUpdateStatus:state.profilePage. profileUpdateStatus,
+        profileDataUpdateStatus:state.profilePage.profileDataUpdateStatus,
 
 })
 
