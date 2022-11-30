@@ -93,12 +93,12 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         debugger
         const arrayStrings = response.data.messages[0].slice(30,-1).toLowerCase();
         const error = {contacts:{}};
+        debugger
         if(arrayStrings) error['contacts'][arrayStrings] =response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
         dispatch(stopSubmit('edit-profile', error));
         return Promise.reject(response.data.messages[0]);
 
     }
 }
-
 
 export default profileReducer;
